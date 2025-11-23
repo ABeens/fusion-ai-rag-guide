@@ -493,13 +493,46 @@ import Layout from "../layouts/Layout.astro";
         to { opacity: 1; }
     }
 
+    /* Tablet breakpoint */
+    @media (max-width: 1024px) {
+        .timeline-nav {
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .content-header h2 {
+            font-size: 1.75rem;
+        }
+    }
+
+    /* Mobile breakpoint */
     @media (max-width: 768px) {
+        .setup-page {
+            padding: 1rem 0.75rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .intro {
+            font-size: 1rem;
+        }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
         .timeline-nav {
             flex-direction: column;
             align-items: flex-start;
             gap: 1.5rem;
+            padding: 0 0.5rem;
         }
-        
+
         .timeline-line {
             left: 25px;
             top: 0;
@@ -512,6 +545,93 @@ import Layout from "../layouts/Layout.astro";
         .timeline-step {
             flex-direction: row;
             width: 100%;
+            gap: 1rem;
+        }
+
+        .step-label {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .content-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .content-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+        }
+
+        .lead {
+            font-size: 1.05rem;
+        }
+
+        .doc-section h3 {
+            font-size: 1.1rem;
+        }
+
+        .file-card {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .file-icon {
+            font-size: 2.5rem;
+        }
+
+        .download-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .action-btn {
+            display: block;
+            text-align: center;
+        }
+
+        code {
+            font-size: 0.85rem;
+            word-break: break-word;
+        }
+    }
+
+    /* Extra small mobile breakpoint */
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.75rem;
+        }
+
+        .timeline-nav {
+            padding: 0 0.25rem;
+        }
+
+        .content-header h2 {
+            font-size: 1.25rem;
+        }
+
+        .lead {
+            font-size: 1rem;
+        }
+
+        .doc-section h3 {
+            font-size: 1rem;
+        }
+
+        .action-btn {
+            padding: 0.7rem 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .file-card {
+            padding: 1rem;
         }
     }
 </style>
