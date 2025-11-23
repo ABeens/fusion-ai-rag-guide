@@ -34,7 +34,6 @@ import Layout from "../layouts/Layout.astro";
                     class="card intro-card animate-slide-up"
                     style="--delay: 100ms"
                 >
-                    <div class="card-icon">🚀</div>
                     <h3>La Era de GPT-5</h3>
                     <p>
                         Accede a los modelos de razonamiento avanzado y
@@ -344,6 +343,17 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <style>
+        /* Prevent horizontal overflow globally */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         /* Mantener estilos originales */
         :root {
             --bg-dark: #09090b;
@@ -364,6 +374,7 @@ import Layout from "../layouts/Layout.astro";
             font-family: "Inter", system-ui, sans-serif;
             position: relative;
             overflow-x: hidden;
+            width: 100%;
         }
 
         .background-glow {
@@ -388,6 +399,7 @@ import Layout from "../layouts/Layout.astro";
             padding: 60px 20px;
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
         /* Header Styles */
@@ -667,14 +679,39 @@ import Layout from "../layouts/Layout.astro";
 
         /* Responsive */
         @media (max-width: 768px) {
-            .title {
-                font-size: 2.5rem;
+            .container {
+                padding: 40px 16px;
             }
+
+            .title {
+                font-size: 2rem;
+                word-wrap: break-word;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
             .split-content {
                 grid-template-columns: 1fr;
             }
+
             .card.full-width .terminal-window {
                 margin-top: 24px;
+            }
+
+            .code-content {
+                font-size: 0.75rem;
+                padding: 12px;
             }
         }
     </style>
