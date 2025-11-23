@@ -1,0 +1,292 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Setup - FusionHit AI Workshop">
+    <div class="setup-container">
+        <header class="page-header">
+            <h1>Configuración del Ambiente</h1>
+            <p class="intro">
+                Prepara tu entorno de trabajo en 3 sencillos pasos.
+            </p>
+        </header>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="card-header">
+                    <span class="step-number">01</span>
+                    <h2>Google Colab</h2>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Utilizaremos Google Colab para ejecutar los notebooks.
+                        No requiere instalación local.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Entorno Python pre-configurado</li>
+                        <li>Acceso gratuito a GPUs</li>
+                        <li>Integración con Google Drive</li>
+                    </ul>
+                    <a
+                        href="https://colab.research.google.com/"
+                        target="_blank"
+                        class="action-btn"
+                    >
+                        Abrir Google Colab ↗
+                    </a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="card-header">
+                    <span class="step-number">02</span>
+                    <h2>OpenAI API Key</h2>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Necesaria para acceder a los modelos GPT-4 y Embeddings.
+                    </p>
+                    <ol class="instruction-list">
+                        <li>Ve a <strong>platform.openai.com</strong></li>
+                        <li>Genera una nueva <em>Secret Key</em></li>
+                        <li>Cópiala (no podrás verla de nuevo)</li>
+                    </ol>
+                    <a
+                        href="https://platform.openai.com/api-keys"
+                        target="_blank"
+                        class="action-btn secondary"
+                    >
+                        Obtener API Key ↗
+                    </a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="card-header">
+                    <span class="step-number">03</span>
+                    <h2>Dataset</h2>
+                </div>
+                <div class="card-content">
+                    <p>
+                        Archivo JSON con los datos que utilizaremos para el RAG
+                        (Retrieval Augmented Generation).
+                    </p>
+                    <div class="file-preview">
+                        <code>data.json</code>
+                        <span class="file-size">2.4 MB</span>
+                    </div>
+                    <a href="/data.json" download class="action-btn download">
+                        Descargar JSON ↓
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-footer">
+            <a href="/" class="back-link">← Volver al Inicio</a>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .setup-container {
+        margin: 0;
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #fff, #94a3b8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .intro {
+        font-size: 1.2rem;
+        color: #a1a1aa;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    .step-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .step-card:nth-child(1) .step-number {
+        color: var(--accent-orange);
+        background: rgba(249, 115, 22, 0.1);
+    }
+
+    .step-card:nth-child(1):hover {
+        border-color: var(--accent-orange);
+        box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+    }
+
+    .step-card:nth-child(2) .step-number {
+        color: var(--accent-green);
+        background: rgba(16, 185, 129, 0.1);
+    }
+
+    .step-card:nth-child(2):hover {
+        border-color: var(--accent-green);
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+    }
+
+    .step-card:nth-child(3) .step-number {
+        color: var(--accent-blue);
+        background: rgba(59, 130, 246, 0.1);
+    }
+
+    .step-card:nth-child(3):hover {
+        border-color: var(--accent-blue);
+        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    }
+
+    .step-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+        border-radius: 12px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .card-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    p {
+        color: #d4d4d8;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-list,
+    .instruction-list {
+        padding-left: 1.2rem;
+        color: #a1a1aa;
+        margin-bottom: 2rem;
+        flex-grow: 1;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    .file-preview {
+        background: #18181b;
+        padding: 1rem;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        border: 1px dashed #3f3f46;
+    }
+
+    code {
+        color: #3b82f6;
+        font-family: monospace;
+    }
+
+    .file-size {
+        font-size: 0.8rem;
+        color: #71717a;
+    }
+
+    .action-btn {
+        display: inline-block;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s;
+        background: var(--accent-orange);
+        color: white;
+    }
+
+    .action-btn:hover {
+        transform: scale(1.02);
+    }
+
+    .action-btn.secondary {
+        background: var(--accent-green);
+    }
+
+    .action-btn.secondary:hover {
+        transform: scale(1.02);
+    }
+
+    .action-btn.download {
+        background: var(--accent-blue);
+    }
+
+    .navigation-footer {
+        text-align: center;
+    }
+
+    .back-link {
+        color: #a1a1aa;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .back-link:hover {
+        color: white;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
