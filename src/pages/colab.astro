@@ -8,7 +8,6 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="container">
             <header class="header animate-fade-in">
-                <div class="badge">☁️ Cloud Computing</div>
                 <h1 class="title">
                     Guía de Inicio <br />
                     <span class="text-gradient">Google Colab</span>
@@ -24,7 +23,7 @@ import Layout from "../layouts/Layout.astro";
                         href="https://colab.research.google.com"
                         target="_blank"
                     >
-                        Abrir Google Colab <span>↗</span>
+                        Abrir Google Colab
                     </a>
                 </div>
             </header>
@@ -34,7 +33,7 @@ import Layout from "../layouts/Layout.astro";
                     class="card intro-card animate-slide-up"
                     style="--delay: 100ms"
                 >
-                    <div class="card-icon">💡</div>
+                    <div class="card-icon"></div>
                     <h3>¿Qué es Google Colab?</h3>
                     <p>
                         Google Colaboratory es un entorno de Jupyter Notebook
@@ -43,15 +42,15 @@ import Layout from "../layouts/Layout.astro";
                         Data Science y Machine Learning.
                     </p>
                     <div class="features-list">
-                        <span class="feature-tag">✨ GPUs Gratuitas</span>
-                        <span class="feature-tag">🔗 Comparte fácil</span>
-                        <span class="feature-tag">📁 Integra Drive</span>
+                        <span class="feature-tag">GPUs Gratuitas</span>
+                        <span class="feature-tag">Comparte fácil</span>
+                        <span class="feature-tag">Integra Drive</span>
                     </div>
                 </div>
 
                 <div class="card animate-slide-up" style="--delay: 200ms">
                     <div class="card-header">
-                        <h3>🎯 Atajos de Teclado</h3>
+                        <h3>Atajos de Teclado</h3>
                     </div>
                     <div class="shortcuts">
                         <div class="shortcut-item">
@@ -78,7 +77,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
 
                 <div class="card animate-slide-up" style="--delay: 300ms">
-                    <h3>🔧 Instalación de Librerías</h3>
+                    <h3>Instalación de Librerías</h3>
                     <p class="text-sm">
                         Usa el signo <code>!</code> para comandos de shell.
                     </p>
@@ -107,7 +106,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
 
                 <div class="card animate-slide-up" style="--delay: 400ms">
-                    <h3>📁 Gestión de Archivos</h3>
+                    <h3>Gestión de Archivos</h3>
                     <div class="terminal-window">
                         <div class="terminal-header">
                             <span class="dot red"></span>
@@ -137,7 +136,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
 
                 <div class="card animate-slide-up" style="--delay: 500ms">
-                    <h3>⚡ Aceleración de Hardware</h3>
+                    <h3>Aceleración de Hardware</h3>
                     <div class="info-box">
                         <p>
                             Ve a <strong>Entorno de ejecución</strong> → <strong
@@ -155,11 +154,32 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                 </div>
 
+                <div class="card animate-slide-up" style="--delay: 200ms">
+                    <div class="card-header">
+                        <h3>Limitaciones Free Tier</h3>
+                    </div>
+                    <div class="shortcuts">
+                        <div class="shortcut-item">
+                            <span
+                                >Reinicio de entorno cada 12 horas (aprox).</span
+                            >
+                        </div>
+                        <div class="shortcut-item">
+                            <span>
+                                Los archivos temporales se borran al cerrar.
+                            </span>
+                        </div>
+                        <div class="shortcut-item">
+                            <span>Disponibilidad de GPU variable.</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div
                     class="card full-width animate-slide-up"
                     style="--delay: 600ms"
                 >
-                    <h3>💻 Ejemplo: Data Science Básico</h3>
+                    <h3>Ejemplo: Data Science Básico</h3>
                     <div class="split-content">
                         <div class="text-content">
                             <p>
@@ -209,41 +229,6 @@ import Layout from "../layouts/Layout.astro";
                     </div>
                 </div>
             </section>
-
-            <section
-                class="footer-grid animate-slide-up"
-                style="--delay: 700ms"
-            >
-                <div class="warning-box">
-                    <div class="icon">⚠️</div>
-                    <div>
-                        <strong>Limitaciones Free Tier</strong>
-                        <ul>
-                            <li>Reinicio de entorno cada 12 horas (aprox).</li>
-                            <li>
-                                Los archivos temporales se borran al cerrar.
-                            </li>
-                            <li>Disponibilidad de GPU variable.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="tip-box">
-                    <div class="icon">💡</div>
-                    <div>
-                        <strong>Pro Tip</strong>
-                        <ul>
-                            <li>
-                                Guarda siempre tus cambios en Drive o GitHub.
-                            </li>
-                            <li>
-                                Descarga los modelos (.h5, .pt) entrenados
-                                inmediatamente.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
 </Layout>
@@ -255,9 +240,6 @@ import Layout from "../layouts/Layout.astro";
         --bg-card: #18181b;
         --bg-card-hover: #27272a;
         --border-color: rgba(255, 255, 255, 0.1);
-        --accent-orange: #f97316;
-        --accent-green: #10b981;
-        --accent-gradient: linear-gradient(45deg, #f97316, #10b981, #3b82f6);
         --text-main: #f4f4f5;
         --text-muted: #a1a1aa;
         --gradient-title: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);

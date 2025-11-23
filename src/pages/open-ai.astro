@@ -1,0 +1,681 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Guía API OpenAI - Edición 2025">
+    <div class="main-wrapper">
+        <div class="background-glow"></div>
+
+        <div class="container">
+            <header class="header animate-fade-in">
+                <h1 class="title">
+                    Guía Completa <br />
+                    <span class="text-gradient">API OpenAI (Gen 5)</span>
+                </h1>
+                <p class="subtitle">
+                    Integra la potencia de <strong>GPT-5.1</strong> y <strong
+                        >GPT-Image-1</strong
+                    >. Actualizado a noviembre de 2025.
+                </p>
+
+                <div class="actions">
+                    <a
+                        class="button-primary"
+                        href="https://platform.openai.com"
+                        target="_blank"
+                    >
+                        Ir a OpenAI Platform
+                    </a>
+                </div>
+            </header>
+
+            <section class="grid">
+                <div
+                    class="card intro-card animate-slide-up"
+                    style="--delay: 100ms"
+                >
+                    <div class="card-icon">🚀</div>
+                    <h3>La Era de GPT-5</h3>
+                    <p>
+                        Accede a los modelos de razonamiento avanzado y
+                        capacidades agénticas. La API v1.x ahora soporta la
+                        familia GPT-5 nativamente.
+                    </p>
+                    <div class="features-list">
+                        <span class="feature-tag">GPT-5.1</span>
+                        <span class="feature-tag">GPT-Image-1</span>
+                        <span class="feature-tag">Sora 2 API</span>
+                        <span class="feature-tag">Agentic Core</span>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 200ms">
+                    <div class="card-header">
+                        <h3>Configuración SDK v1.50+</h3>
+                    </div>
+                    <div class="steps">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <span>Cuenta activa en platform.openai.com</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <span>Key con permisos de Modelos Gen-5</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <span
+                                ><code>pip install openai --upgrade</code></span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 300ms">
+                    <h3>Cliente & Autenticación</h3>
+                    <p class="text-sm">
+                        La instanciación del cliente se mantiene estándar en
+                        2025.
+                    </p>
+
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-comment"
+                                ># Asegúrate de tener la última versión (Nov
+                                2025)</span
+                            ><br />
+                            <span class="code-keyword">!</span>pip install
+                            openai -U<br /><br />
+
+                            <span class="code-keyword">from</span> openai <span
+                                class="code-keyword">import</span
+                            > OpenAI<br />
+                            <span class="code-keyword">import</span> os<br /><br
+                            />
+
+                            client = OpenAI(<br />
+                            &nbsp;&nbsp;api_key=os.environ.get(<span
+                                class="code-string">"OPENAI_API_KEY"</span
+                            >)<br />
+                            )
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 400ms">
+                    <h3>Chat: GPT-5.1 (Flagship)</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-comment"
+                                ># GPT-5.1 ofrece el mejor balance
+                                razonamiento/velocidad</span
+                            ><br />
+                            completion = client.chat.completions.create(<br />
+                            &nbsp;&nbsp;model=<span class="code-string"
+                                >"gpt-5.1"</span
+                            >,<br />
+                            &nbsp;&nbsp;messages=[<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#123;<span
+                                class="code-string">"role"</span
+                            >: <span class="code-string">"user"</span>, <span
+                                class="code-string">"content"</span
+                            >: <span class="code-string"
+                                >"Analiza este código complejo..."</span
+                            >&#125;<br />
+                            &nbsp;&nbsp;]<br />
+                            )<br /><br />
+
+                            print(completion.choices[0].message.content)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 500ms">
+                    <h3>Razonamiento Profundo ("Thinking")</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-comment"
+                                ># Para tareas científicas o matemáticas
+                                complejas</span
+                            ><br />
+                            <span class="code-comment"
+                                ># Usamos el parámetro 'reasoning_effort'
+                                introducido en late-2024</span
+                            ><br />
+                            response = client.chat.completions.create(<br />
+                            &nbsp;&nbsp;model=<span class="code-string"
+                                >"gpt-5.1-pro"</span
+                            >,<br />
+                            &nbsp;&nbsp;messages=[<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&#123;<span
+                                class="code-string">"role"</span
+                            >: <span class="code-string">"user"</span>, <span
+                                class="code-string">"content"</span
+                            >: <span class="code-string"
+                                >"Diseña una arquitectura de microservicios..."</span
+                            >&#125;<br />
+                            &nbsp;&nbsp;],<br />
+                            &nbsp;&nbsp;<span class="code-keyword"
+                                >reasoning_effort</span
+                            >=<span class="code-string">"high"</span>
+                            <span class="code-comment"># low, medium, high</span
+                            ><br />
+                            )
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 200ms">
+                    <div class="card-header">
+                        <h3>Modelos Disponibles (Nov 2025)</h3>
+                    </div>
+                    <div class="model-list">
+                        <div class="model-item">
+                            <strong>GPT-5.1</strong>
+                            <span
+                                >El nuevo estándar. Multimodal nativo y
+                                agéntico.</span
+                            >
+                        </div>
+                        <div class="model-item">
+                            <strong>GPT-5 Mini</strong>
+                            <span
+                                >Reemplazo de GPT-4o-mini. Extremadamente
+                                eficiente.</span
+                            >
+                        </div>
+                        <div class="model-item">
+                            <strong>GPT-Image-1</strong>
+                            <span
+                                >Calidad fotorrealista superior a DALL-E 3.</span
+                            >
+                        </div>
+                        <div class="model-item">
+                            <strong>Sora 2</strong>
+                            <span>Generación de video vía API (Beta).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="card full-width animate-slide-up"
+                    style="--delay: 600ms"
+                >
+                    <h3>Ejemplo Agéntico (Function Calling v2)</h3>
+                    <div class="split-content">
+                        <div class="text-content">
+                            <p>
+                                GPT-5 está optimizado para actuar como agente
+                                autónomo. Puede encadenar herramientas de forma
+                                más fiable.
+                            </p>
+                            <ul class="check-list">
+                                <li>Baja latencia con GPT-5 Instant</li>
+                                <li>Soporte de JSON Mode estricto</li>
+                                <li>Mejor adherencia a instrucciones</li>
+                            </ul>
+                        </div>
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="filename">agent.py</span>
+                            </div>
+                            <div class="code-content">
+                                <span class="code-keyword">def</span>
+                                <span class="code-function">agente_datos</span
+                                >(query):<br />
+                                &nbsp;&nbsp;response = client.chat.completions.create(<br
+                                />
+                                &nbsp;&nbsp;&nbsp;&nbsp;model=<span
+                                    class="code-string">"gpt-5-mini"</span
+                                >, <span class="code-comment"
+                                    ># Rápido para tools</span
+                                ><br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;messages=[<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;<span
+                                    class="code-string">"role"</span
+                                >: <span class="code-string">"system"</span>, <span
+                                    class="code-string">"content"</span
+                                >: <span class="code-string"
+                                    >"Eres un analista de datos."</span
+                                >&#125;,<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;<span
+                                    class="code-string">"role"</span
+                                >: <span class="code-string">"user"</span>, <span
+                                    class="code-string">"content"</span
+                                >: query&#125;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;],<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;response_format=&#123; <span
+                                    class="code-string">"type"</span
+                                >: <span class="code-string">"json_object"</span
+                                > &#125;,<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;temperature=0.2<br />
+                                &nbsp;&nbsp;)<br /><br />
+                                &nbsp;&nbsp;<span class="code-keyword"
+                                    >return</span
+                                > response.choices[0].message.content
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 700ms">
+                    <h3>Generación de Imágenes (GPT-Image-1)</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-comment"
+                                ># DALL-E 3 sigue disponible, pero GPT-Image-1
+                                es SOTA</span
+                            ><br />
+                            response = client.images.generate(<br />
+                            &nbsp;&nbsp;model=<span class="code-string"
+                                >"gpt-image-1"</span
+                            >,<br />
+                            &nbsp;&nbsp;prompt=<span class="code-string"
+                                >"Diseño UI futurista, estilo glassmorphism, 8k"</span
+                            >,<br />
+                            &nbsp;&nbsp;size=<span class="code-string"
+                                >"1024x1024"</span
+                            >,<br />
+                            &nbsp;&nbsp;quality=<span class="code-string"
+                                >"hd"</span
+                            >,<br />
+                            &nbsp;&nbsp;n=1,<br />
+                            )<br /><br />
+
+                            print(response.data[0].url)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 900ms">
+                    <div class="card-header">
+                        <h3>Manejo de Errores</h3>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-keyword">import</span> openai<br
+                            /><br />
+                            <span class="code-keyword">try</span>:<br />
+                            &nbsp;&nbsp;client.chat.completions.create(...)<br
+                            />
+                            <span class="code-keyword">except</span> openai.RateLimitError:<br
+                            />
+                            &nbsp;&nbsp;print(<span class="code-string"
+                                >"Límite excedido (Revisar Tier 5)"</span
+                            >)<br />
+                            <span class="code-keyword">except</span> openai.APIError
+                            <span class="code-keyword">as</span> e:<br />
+                            &nbsp;&nbsp;print(<span class="code-string"
+                                >f"Error de API: &#123;e&#125;"</span
+                            >)
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <style>
+        /* Mantener estilos originales */
+        :root {
+            --bg-dark: #09090b;
+            --bg-card: #18181b;
+            --bg-card-hover: #27272a;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            /* Actualizado a un gradiente más "Next-Gen" (Violeta/Cian) */
+            --gradient-title: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+            --accent-green: #06b6d4; /* Cian para look futurista */
+        }
+
+        .main-wrapper {
+            background-color: var(--bg-dark);
+            min-height: 100vh;
+            color: var(--text-main);
+            font-family: "Inter", system-ui, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .background-glow {
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(
+                circle,
+                rgba(168, 85, 247, 0.15) 0%,
+                transparent 70%
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .text-gradient {
+            background: var(--gradient-title);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 32px auto;
+        }
+
+        .button-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--text-main);
+            color: var(--bg-dark);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .button-primary:hover {
+            transform: scale(1.05);
+        }
+
+        /* Grid and Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .intro-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .feature-tag {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            color: var(--text-muted);
+        }
+
+        /* Steps Styling */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .step-number {
+            background: var(--accent-green);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Model List */
+        .model-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .model-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .model-item:last-child {
+            border-bottom: none;
+        }
+
+        .model-item strong {
+            color: var(--text-main);
+        }
+
+        .model-item span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Terminal Window Styling */
+        .terminal-window {
+            background: #0f1115;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            margin-top: auto;
+        }
+
+        .terminal-header {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot.red {
+            background: #ef4444;
+        }
+        .dot.yellow {
+            background: #f59e0b;
+        }
+        .dot.green {
+            background: #22c55e;
+        }
+
+        .filename {
+            margin-left: auto;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: monospace;
+        }
+
+        .code-content {
+            padding: 16px;
+            font-family: "Fira Code", "Menlo", monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            color: #e2e8f0;
+        }
+
+        /* Syntax Highlighting */
+        .code-comment {
+            color: #64748b;
+            font-style: italic;
+        }
+        .code-keyword {
+            color: #c084fc;
+        }
+        .code-string {
+            color: #86efac;
+        }
+        .code-function {
+            color: #fbbf24;
+        }
+
+        /* Split Content */
+        .split-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .check-list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 24px;
+            color: var(--text-muted);
+        }
+
+        .check-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .animate-slide-up {
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+            animation-delay: var(--delay, 0ms);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            .split-content {
+                grid-template-columns: 1fr;
+            }
+            .card.full-width .terminal-window {
+                margin-top: 24px;
+            }
+        }
+    </style>
+</Layout>
