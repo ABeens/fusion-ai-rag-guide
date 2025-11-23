@@ -12,7 +12,7 @@ const slides = [
 		title: "Google Colab",
 		subtitle: "Entorno de trabajo gratuito",
 		image: "/colab.png",
-		link: "https://medium.com/@noyomedicen/gu%C3%ADa-completa-para-comenzar-con-google-colab-desde-cero-0739c5cea3d8",
+		link: "/colab",
 	},
 	{
 		title: "RAG",
@@ -40,8 +40,14 @@ const slides = [
 						href={slide.link}
 						class="slide-item"
 						data-index={index}
-						target={slide.link.startsWith('http') ? '_blank' : undefined}
-						rel={slide.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+						target={
+							slide.link.startsWith("http") ? "_blank" : undefined
+						}
+						rel={
+							slide.link.startsWith("http")
+								? "noopener noreferrer"
+								: undefined
+						}
 					>
 						<div
 							class="slide-bg"

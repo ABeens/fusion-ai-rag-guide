@@ -1,0 +1,379 @@
+---
+// src/pages/guia-colab.astro
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guía Básica de Google Colab</title>
+        <style>
+            :root {
+                --primary: #1967d2;
+                --secondary: #34a853;
+                --accent: #ea4335;
+                --light: #f8f9fa;
+                --dark: #202124;
+                --gray: #5f6368;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: var(--dark);
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                min-height: 100vh;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+                padding: 30px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .title {
+                color: var(--primary);
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                color: var(--gray);
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .link-box {
+                background: var(--primary);
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .link-box a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+
+            .link-box a:hover {
+                text-decoration: underline;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+
+            .card {
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card h3 {
+                color: var(--primary);
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .card h3::before {
+                content: "▸";
+                color: var(--secondary);
+            }
+
+            .code-block {
+                background: #1e1e1e;
+                color: #d4d4d4;
+                padding: 15px;
+                border-radius: 8px;
+                margin: 15px 0;
+                overflow-x: auto;
+                font-family: "Courier New", monospace;
+                font-size: 0.9rem;
+            }
+
+            .code-comment {
+                color: #6a9955;
+            }
+
+            .code-keyword {
+                color: #569cd6;
+            }
+
+            .code-string {
+                color: #ce9178;
+            }
+
+            .code-function {
+                color: #dcdcaa;
+            }
+
+            .tip-box {
+                background: #e3f2fd;
+                border-left: 4px solid var(--primary);
+                padding: 15px;
+                margin: 15px 0;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .warning-box {
+                background: #ffebee;
+                border-left: 4px solid var(--accent);
+                padding: 15px;
+                margin: 15px 0;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .icon {
+                font-size: 1.5rem;
+                margin-right: 10px;
+            }
+
+            .footer {
+                text-align: center;
+                margin-top: 40px;
+                padding: 20px;
+                color: var(--gray);
+                font-size: 0.9rem;
+            }
+
+            @media (max-width: 768px) {
+                .title {
+                    font-size: 2rem;
+                }
+
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1 class="title">🚀 Guía Básica de Google Colab</h1>
+                <p class="subtitle">
+                    Aprende a usar Google Colaboratory desde cero
+                </p>
+
+                <div class="link-box">
+                    <span class="icon">🔗</span>
+                    <a href="https://colab.research.google.com" target="_blank">
+                        https://colab.research.google.com
+                    </a>
+                </div>
+            </header>
+
+            <section class="grid">
+                <div class="card">
+                    <h3>📌 ¿Qué es Google Colab?</h3>
+                    <p>
+                        Google Colaboratory (Colab) es un entorno de
+                        programación en la nube que permite escribir y ejecutar
+                        código Python directamente en el navegador.
+                    </p>
+                    <div class="tip-box">
+                        <strong>💡 Características principales:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Acceso gratuito a GPUs y TPUs</li>
+                            <li>No requiere configuración</li>
+                            <li>Compartición fácil de notebooks</li>
+                            <li>Integración con Google Drive</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 Comandos Básicos</h3>
+                    <div class="code-block">
+                        <span class="code-comment"># Ejecutar celda</span><br />
+                        Ctrl + Enter<br /><br />
+
+                        <span class="code-comment"># Ejecutar y avanzar</span
+                        ><br />
+                        Shift + Enter<br /><br />
+
+                        <span class="code-comment"># Insertar celda arriba</span
+                        ><br />
+                        Ctrl + M A<br /><br />
+
+                        <span class="code-comment"># Insertar celda abajo</span
+                        ><br />
+                        Ctrl + M B
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🔧 Instalación de Librerías</h3>
+                    <div class="code-block">
+                        <span class="code-comment"
+                            ># Instalar paquetes con pip</span
+                        ><br />
+                        <span class="code-keyword">!</span>pip <span
+                            class="code-function">install</span
+                        >
+                        <span class="code-string">pandas numpy matplotlib</span
+                        ><br /><br />
+
+                        <span class="code-comment"
+                            ># Instalar desde requirements.txt</span
+                        ><br />
+                        <span class="code-keyword">!</span>pip <span
+                            class="code-function">install</span
+                        >
+                        <span class="code-string">-r requirements.txt</span><br
+                        /><br />
+
+                        <span class="code-comment"
+                            ># Instalar en modo desarrollo</span
+                        ><br />
+                        <span class="code-keyword">!</span>pip <span
+                            class="code-function">install</span
+                        >
+                        <span class="code-string">-e .</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>📁 Manejo de Archivos</h3>
+                    <div class="code-block">
+                        <span class="code-comment"># Montar Google Drive</span
+                        ><br />
+                        <span class="code-keyword">from</span> google.colab <span
+                            class="code-keyword">import</span
+                        > drive<br />
+                        drive.mount(<span class="code-string"
+                            >'/content/drive'</span
+                        >)<br /><br />
+
+                        <span class="code-comment"># Subir archivos</span><br />
+                        <span class="code-keyword">from</span> google.colab <span
+                            class="code-keyword">import</span
+                        > files<br />
+                        uploaded <span class="code-keyword">=</span> files.upload()<br
+                        /><br />
+
+                        <span class="code-comment"># Comandos del sistema</span
+                        ><br />
+                        <span class="code-keyword">!</span>ls <span
+                            class="code-comment"># Listar archivos</span
+                        ><br />
+                        <span class="code-keyword">!</span>pwd <span
+                            class="code-comment"># Directorio actual</span
+                        ><br />
+                        <span class="code-keyword">!</span>mkdir carpeta
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>⚡ Uso de GPU/TPU</h3>
+                    <div class="code-block">
+                        <span class="code-comment"># Verificar GPU</span><br />
+                        <span class="code-keyword">import</span> tensorflow <span
+                            class="code-keyword">as</span
+                        > tf<br />
+                        tf.test.gpu_device_name()<br /><br />
+
+                        <span class="code-comment"># Información de GPU</span
+                        ><br />
+                        <span class="code-keyword">!</span>nvidia-smi<br /><br
+                        />
+
+                        <span class="code-comment"># Configurar runtime:</span
+                        ><br />
+                        <span class="code-comment"
+                            ># Runtime → Change runtime type → GPU</span
+                        >
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>💻 Ejemplo Práctico</h3>
+                    <div class="code-block">
+                        <span class="code-comment"
+                            ># Análisis de datos básico</span
+                        ><br />
+                        <span class="code-keyword">import</span> pandas <span
+                            class="code-keyword">as</span
+                        > pd<br />
+                        <span class="code-keyword">import</span> matplotlib.pyplot
+                        <span class="code-keyword">as</span> plt<br /><br />
+
+                        <span class="code-comment"
+                            ># Cargar y mostrar datos</span
+                        ><br />
+                        df <span class="code-keyword">=</span> pd.read_csv(<span
+                            class="code-string">'datos.csv'</span
+                        >)<br />
+                        print(df.head())<br /><br />
+
+                        <span class="code-comment"># Visualización</span><br />
+                        plt.plot(df[<span class="code-string">'columna'</span
+                        >])<br />
+                        plt.show()
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>⚠️ Consejos Importantes</h3>
+                <div class="warning-box">
+                    <strong>Límites de la versión gratuita:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>📅 Sesiones máximas de 12 horas</li>
+                        <li>💾 Archivos temporales (se pierden al cerrar)</li>
+                        <li>⚡ Límites de RAM y almacenamiento</li>
+                        <li>🎮 GPU disponible ~12 horas continuas</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <strong>✅ Mejores prácticas:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Guarda frecuentemente en Drive o GitHub</li>
+                        <li>Usa GPU solo cuando sea necesario</li>
+                        <li>Descarga resultados importantes</li>
+                        <li>Comparte notebooks con compañeros</li>
+                    </ul>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>
+                    🎓 Guía creada para el aprendizaje de Google Colab - ¡A
+                    programar! 🚀
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
