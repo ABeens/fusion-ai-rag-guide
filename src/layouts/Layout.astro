@@ -51,7 +51,7 @@ const currentStepIndex = getCurrentStepIndex(pathname);
                 />
                 <span class="logo-text">FusionHit AI Workshop</span>
             </a>
-            <!-- Simple hamburger or minimal menu could go here if needed, but keeping it clean for the slider focus -->
+            <div class="header-extra-info">Guía de Implementación RAG</div>
         </nav>
 
         <main transition:animate={slide({ duration: "0.6s" })}>
@@ -87,6 +87,8 @@ const currentStepIndex = getCurrentStepIndex(pathname);
                 left: 0;
                 width: 100%;
                 height: var(--nav-height);
+                display: flex;
+                justify-content: space-between;
                 align-items: center;
                 padding: 0 2rem;
                 box-sizing: border-box;
@@ -114,6 +116,20 @@ const currentStepIndex = getCurrentStepIndex(pathname);
                 font-weight: 600;
                 letter-spacing: 1px;
                 text-transform: uppercase;
+            }
+
+            .header-extra-info {
+                display: none;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.9rem;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+            }
+
+            @media (min-width: 768px) {
+                .header-extra-info {
+                    display: block;
+                }
             }
 
             main {
