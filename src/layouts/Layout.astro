@@ -82,13 +82,11 @@ const currentStepIndex = getCurrentStepIndex(pathname);
             }
 
             nav {
-                position: fixed;
-                top: 0;
+                position: relative;
+                top: 30px;
                 left: 0;
                 width: 100%;
                 height: var(--nav-height);
-                display: flex;
-                justify-content: space-between;
                 align-items: center;
                 padding: 0 2rem;
                 box-sizing: border-box;
@@ -120,12 +118,6 @@ const currentStepIndex = getCurrentStepIndex(pathname);
 
             main {
                 min-height: 50vh;
-                /* Remove padding-top to let the slider take full height if needed, 
-				   but keep it if we want to respect the nav space. 
-				   The reference has the content centered vertically. */
-                padding-top: var(--nav-height);
-                display: flex;
-                flex-direction: column;
                 width: 100%;
                 overflow: hidden;
             }
