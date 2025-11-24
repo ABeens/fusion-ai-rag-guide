@@ -7,6 +7,12 @@ import Layout from "../layouts/Layout.astro";
 		<div class="doc-header">
 			<h1>Documentación del Workshop</h1>
 			<p class="subtitle">Tecnologías y Recursos para el Sistema RAG</p>
+
+			<div class="actions">
+				<a class="button-primary" href="/data.json" download="marvel-quotes.json">
+					Descargar Dataset (JSON)
+				</a>
+			</div>
 		</div>
 
 		<!-- Dataset Section -->
@@ -308,7 +314,7 @@ import Layout from "../layouts/Layout.astro";
 		<section class="doc-section">
 			<h2>Recursos Adicionales</h2>
 			<div class="resources-grid">
-				<a href="/data.json" target="_blank" class="resource-link">
+				<a href="/data.json" download="marvel-quotes.json" class="resource-link">
 					<span class="resource-icon"></span>
 					<div>
 						<strong>data.json</strong>
@@ -341,23 +347,41 @@ import Layout from "../layouts/Layout.astro";
 	</div>
 
 	<style>
+		:root {
+			--bg-dark: #09090b;
+			--bg-card: #18181b;
+			--bg-card-hover: #27272a;
+			--border-color: rgba(255, 255, 255, 0.1);
+			--text-main: #f4f4f5;
+			--text-muted: #a1a1aa;
+			--gradient-title: linear-gradient(
+				135deg,
+				var(--accent-green) 0%,
+				var(--accent-blue) 100%
+			);
+		}
+
 		.documentation-container {
 			max-width: 1400px;
 			margin: 0 auto;
-			padding: 2rem;
-			color: var(--text-color);
+			padding: 60px 20px;
+			color: var(--text-main);
+			background-color: var(--bg-dark);
+			min-height: 100vh;
 		}
 
 		.doc-header {
 			text-align: center;
-			margin-bottom: 4rem;
-			padding: 2rem 0;
+			margin-bottom: 80px;
 		}
 
 		.doc-header h1 {
-			font-size: 3rem;
-			margin: 0;
-			background: var(--accent-gradient);
+			font-size: 3.5rem;
+			line-height: 1.1;
+			font-weight: 800;
+			margin: 0 0 16px 0;
+			letter-spacing: -0.02em;
+			background: var(--gradient-title);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
@@ -365,174 +389,205 @@ import Layout from "../layouts/Layout.astro";
 
 		.subtitle {
 			font-size: 1.2rem;
-			color: rgba(255, 255, 255, 0.7);
-			margin-top: 1rem;
+			color: var(--text-muted);
+			margin: 0 0 32px 0;
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.actions {
+			display: flex;
+			justify-content: center;
+			gap: 16px;
+			margin-top: 32px;
+		}
+
+		.button-primary {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: var(--text-main);
+			color: var(--bg-dark);
+			padding: 12px 24px;
+			border-radius: 8px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: transform 0.2s;
+		}
+
+		.button-primary:hover {
+			transform: scale(1.05);
 		}
 
 		.doc-section {
-			margin-bottom: 4rem;
+			margin-bottom: 60px;
 		}
 
 		.doc-section h2 {
 			font-size: 2rem;
-			margin-bottom: 1.5rem;
-			color: var(--accent-blue);
+			margin-bottom: 24px;
+			color: var(--text-main);
+			font-weight: 700;
 		}
 
 		.section-intro {
 			font-size: 1.1rem;
-			color: rgba(255, 255, 255, 0.8);
-			margin-bottom: 2rem;
+			color: var(--text-muted);
+			margin-bottom: 32px;
 			line-height: 1.6;
 		}
 
 		.content-box {
-			background: rgba(255, 255, 255, 0.05);
-			border-radius: 20px;
-			padding: 2rem;
-			border: 1px solid rgba(255, 255, 255, 0.1);
+			background: var(--bg-card);
+			border-radius: 16px;
+			padding: 24px;
+			border: 1px solid var(--border-color);
 		}
 
 		.content-box p {
 			line-height: 1.8;
-			color: rgba(255, 255, 255, 0.8);
+			color: var(--text-muted);
 		}
 
 		code {
-			background: rgba(59, 130, 246, 0.2);
+			background: rgba(255, 255, 255, 0.1);
 			padding: 0.2rem 0.5rem;
 			border-radius: 4px;
 			font-family: "Courier New", monospace;
-			color: var(--accent-blue);
+			color: var(--text-main);
+			font-size: 0.9em;
 		}
 
 		.json-structure {
-			margin-top: 2rem;
+			margin-top: 24px;
 		}
 
 		.json-structure h3 {
-			color: var(--accent-orange);
-			margin-bottom: 1rem;
+			color: var(--text-main);
+			margin-bottom: 12px;
+			font-size: 1.1rem;
 		}
 
 		.json-structure pre {
-			background: rgba(0, 0, 0, 0.5);
-			padding: 1.5rem;
-			border-radius: 10px;
+			background: #0f1115;
+			padding: 16px;
+			border-radius: 8px;
 			overflow-x: auto;
-			border: 1px solid rgba(249, 115, 22, 0.3);
+			border: 1px solid var(--border-color);
 		}
 
 		.json-structure code {
 			background: none;
 			padding: 0;
-			color: rgba(255, 255, 255, 0.9);
-			font-size: 0.9rem;
+			color: #e2e8f0;
+			font-size: 0.85rem;
 			line-height: 1.6;
 		}
 
 		.characters-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			gap: 1rem;
-			margin-top: 2rem;
+			gap: 16px;
+			margin-top: 24px;
 		}
 
 		.character-card {
-			background: rgba(59, 130, 246, 0.1);
-			padding: 1.5rem;
-			border-radius: 10px;
-			border: 1px solid rgba(59, 130, 246, 0.3);
+			background: var(--bg-card);
+			padding: 16px;
+			border-radius: 8px;
+			border: 1px solid var(--border-color);
 			text-align: center;
+			transition: all 0.3s ease;
+		}
+
+		.character-card:hover {
+			border-color: var(--text-muted);
+			transform: translateY(-2px);
 		}
 
 		.character-card h4 {
 			margin: 0;
-			color: var(--accent-blue);
-			font-size: 1.2rem;
+			color: var(--text-main);
+			font-size: 1.1rem;
 		}
 
 		.character-card p {
-			margin: 0.5rem 0 0;
-			color: rgba(255, 255, 255, 0.7);
-			font-size: 0.9rem;
+			margin: 8px 0 0;
+			color: var(--text-muted);
+			font-size: 0.85rem;
 		}
 
 		.tech-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-			gap: 2rem;
+			gap: 24px;
 		}
 
 		.tech-card {
-			background: rgba(255, 255, 255, 0.05);
-			border-radius: 15px;
-			padding: 2rem;
-			border: 1px solid rgba(255, 255, 255, 0.1);
+			background: var(--bg-card);
+			border-radius: 16px;
+			padding: 24px;
+			border: 1px solid var(--border-color);
 			transition: all 0.3s ease;
+			display: flex;
+			flex-direction: column;
 		}
 
 		.tech-card:hover {
-			transform: translateY(-5px);
-			border-color: var(--accent-blue);
-			box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+			transform: translateY(-4px);
+			box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 		}
 
 		.tech-card.highlight {
-			background: rgba(249, 115, 22, 0.05);
-		}
-
-		.tech-card.highlight:hover {
-			border-color: var(--accent-orange);
-			box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+			background: var(--bg-card);
 		}
 
 		.tech-header {
 			display: flex;
 			align-items: center;
-			gap: 1rem;
-			margin-bottom: 1rem;
+			gap: 12px;
+			margin-bottom: 16px;
 		}
 
 		.tech-icon {
-			font-size: 2rem;
+			font-size: 1.5rem;
+			opacity: 0.8;
 		}
 
 		.tech-header h3 {
 			margin: 0;
-			color: var(--accent-blue);
-			font-size: 1.3rem;
-		}
-
-		.tech-card.highlight .tech-header h3 {
-			color: var(--accent-orange);
+			color: var(--text-main);
+			font-size: 1.25rem;
 		}
 
 		.tech-description {
-			color: rgba(255, 255, 255, 0.8);
+			color: var(--text-muted);
 			line-height: 1.6;
-			margin-bottom: 1rem;
+			margin-bottom: 16px;
 		}
 
 		.tech-usage {
-			margin-top: 1rem;
+			margin-top: 16px;
 		}
 
 		.tech-usage strong {
-			color: var(--accent-green);
+			color: var(--text-main);
 			display: block;
-			margin-bottom: 0.5rem;
+			margin-bottom: 8px;
+			font-size: 0.9rem;
 		}
 
 		.tech-usage ul {
-			margin: 0.5rem 0 0 0;
-			padding-left: 1.5rem;
+			margin: 0;
+			padding-left: 20px;
 		}
 
 		.tech-usage li {
-			color: rgba(255, 255, 255, 0.7);
-			margin-bottom: 0.5rem;
-			line-height: 1.5;
+			color: var(--text-muted);
+			margin-bottom: 6px;
+			line-height: 1.6;
+			font-size: 0.9rem;
 		}
 
 		.flow-diagram {
@@ -540,93 +595,104 @@ import Layout from "../layouts/Layout.astro";
 			align-items: center;
 			justify-content: space-between;
 			flex-wrap: wrap;
-			gap: 1rem;
+			gap: 16px;
 		}
 
 		.flow-step {
 			flex: 1;
 			min-width: 150px;
-			background: rgba(59, 130, 246, 0.1);
-			padding: 1.5rem;
-			border-radius: 10px;
-			border: 2px solid var(--accent-blue);
+			background: var(--bg-card);
+			padding: 20px;
+			border-radius: 12px;
+			border: 1px solid var(--border-color);
 			text-align: center;
+			transition: all 0.3s ease;
+		}
+
+		.flow-step:hover {
+			border-color: var(--text-muted);
+			transform: translateY(-2px);
 		}
 
 		.step-number {
-			width: 40px;
-			height: 40px;
-			background: var(--accent-blue);
+			width: 36px;
+			height: 36px;
+			background: rgba(255, 255, 255, 0.1);
 			border-radius: 50%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			margin: 0 auto 1rem;
+			margin: 0 auto 12px;
 			font-weight: bold;
-			font-size: 1.2rem;
+			font-size: 1rem;
+			color: var(--text-main);
+			border: 1px solid var(--border-color);
 		}
 
 		.flow-step h4 {
-			margin: 0.5rem 0;
-			color: var(--accent-blue);
+			margin: 8px 0;
+			color: var(--text-main);
+			font-size: 1rem;
 		}
 
 		.flow-step p {
 			margin: 0;
-			font-size: 0.9rem;
-			color: rgba(255, 255, 255, 0.7);
+			font-size: 0.85rem;
+			color: var(--text-muted);
 		}
 
 		.flow-arrow {
-			font-size: 2rem;
-			color: var(--accent-blue);
+			font-size: 1.5rem;
+			color: var(--text-muted);
 			flex-shrink: 0;
 		}
 
 		.resources-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			gap: 1.5rem;
+			gap: 24px;
 		}
 
 		.resource-link {
 			display: flex;
 			align-items: center;
-			gap: 1rem;
-			background: rgba(255, 255, 255, 0.05);
-			padding: 1.5rem;
-			border-radius: 10px;
-			border: 1px solid rgba(255, 255, 255, 0.1);
+			gap: 16px;
+			background: var(--bg-card);
+			padding: 20px;
+			border-radius: 12px;
+			border: 1px solid var(--border-color);
 			text-decoration: none;
-			color: var(--text-color);
+			color: var(--text-main);
 			transition: all 0.3s ease;
 		}
 
 		.resource-link:hover {
-			transform: translateY(-3px);
-			border-color: var(--accent-green);
-			box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+			transform: translateY(-4px);
+			box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+			border-color: var(--text-muted);
 		}
 
 		.resource-icon {
-			font-size: 2.5rem;
+			font-size: 2rem;
+			opacity: 0.8;
 		}
 
 		.resource-link strong {
 			display: block;
-			color: var(--accent-green);
-			margin-bottom: 0.3rem;
+			color: var(--text-main);
+			margin-bottom: 4px;
+			font-size: 1rem;
 		}
 
 		.resource-link p {
 			margin: 0;
-			font-size: 0.9rem;
-			color: rgba(255, 255, 255, 0.7);
+			font-size: 0.85rem;
+			color: var(--text-muted);
 		}
 
 		@media (max-width: 768px) {
 			.doc-header h1 {
-				font-size: 2rem;
+				font-size: 2.5rem;
 			}
 
 			.tech-grid {
@@ -642,7 +708,7 @@ import Layout from "../layouts/Layout.astro";
 			}
 
 			.documentation-container {
-				padding: 1rem;
+				padding: 40px 16px;
 			}
 		}
 	</style>
