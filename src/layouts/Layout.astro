@@ -2,12 +2,6 @@
 import { ClientRouter } from "astro:transitions";
 import { slide } from "astro:transitions";
 const basePath = import.meta.env.BASE_URL;
-
-interface Props {
-    title: string;
-}
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +11,7 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/png" href={`${basePath}/logo.png`} />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <title>FusionHit AI Workshop</title>
         <ClientRouter />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,7 +25,7 @@ const { title } = Astro.props;
             <a href={`${basePath}`} class="logo-container">
                 <img
                     src={`${basePath}/logo.jpg`}
-                    alt="Empowering con IA Logo"
+                    alt="FusionHit AI Workshop"
                     class="nav-logo"
                 />
                 <span class="logo-text">FusionHit AI Workshop</span>
