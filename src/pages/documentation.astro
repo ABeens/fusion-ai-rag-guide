@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const basePath = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Documentación - RAG Workshop">
@@ -9,7 +10,11 @@ import Layout from "../layouts/Layout.astro";
 			<p class="subtitle">Tecnologías y Recursos para el Sistema RAG</p>
 
 			<div class="actions">
-				<a class="button-primary" href="/data.json" download="marvel-quotes.json">
+				<a
+					class="button-primary"
+					href={`${basePath}/data.json`}
+					download="marvel-quotes.json"
+				>
 					Descargar Dataset (JSON)
 				</a>
 			</div>
@@ -82,11 +87,13 @@ import Layout from "../layouts/Layout.astro";
 						<ul>
 							<li>
 								Cargar archivo JSON en DataFrame con <code
-									>pd.read_json()</code>
+									>pd.read_json()</code
+								>
 							</li>
 							<li>
 								Visualizar primeros datos con <code
-									>df.head()</code>
+									>df.head()</code
+								>
 							</li>
 							<li>Procesar información de las citas</li>
 							<li>Manipular y transformar datos estructurados</li>
@@ -108,7 +115,8 @@ import Layout from "../layouts/Layout.astro";
 						<ul>
 							<li>
 								Obtener valores únicos con <code
-									>np.unique()</code>
+									>np.unique()</code
+								>
 							</li>
 							<li>Manejar embeddings como arrays numéricos</li>
 							<li>Operaciones matemáticas eficientes</li>
@@ -132,7 +140,8 @@ import Layout from "../layouts/Layout.astro";
 						<ul>
 							<li>
 								Cargar modelo pre-entrenado con <code
-									>SentenceTransformer</code>
+									>SentenceTransformer</code
+								>
 							</li>
 							<li>
 								Convertir citas de Marvel en vectores numéricos
@@ -314,28 +323,35 @@ import Layout from "../layouts/Layout.astro";
 		<section class="doc-section">
 			<h2>Recursos Adicionales</h2>
 			<div class="resources-grid">
-				<a href="/data.json" download="marvel-quotes.json" class="resource-link">
+				<a
+					href={`${basePath}/data.json`}
+					download="marvel-quotes.json"
+					class="resource-link"
+				>
 					<span class="resource-icon"></span>
 					<div>
 						<strong>data.json</strong>
 						<p>Dataset completo de citas Marvel</p>
 					</div>
 				</a>
-				<a href="/colab" class="resource-link">
+				<a href={`${basePath}/colab`} class="resource-link">
 					<span class="resource-icon"></span>
 					<div>
 						<strong>Google Colab</strong>
 						<p>Configuración del entorno de trabajo</p>
 					</div>
 				</a>
-				<a href="/open-ai" class="resource-link">
+				<a href={`${basePath}/open-ai`} class="resource-link">
 					<span class="resource-icon"></span>
 					<div>
 						<strong>OpenAI API</strong>
 						<p>Setup de credenciales</p>
 					</div>
 				</a>
-				<a href="/complementary-info" class="resource-link">
+				<a
+					href={`${basePath}/complementary-info`}
+					class="resource-link"
+				>
 					<span class="resource-icon"></span>
 					<div>
 						<strong>Base Teórica</strong>

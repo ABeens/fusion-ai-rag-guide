@@ -1,26 +1,13 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { slide } from "astro:transitions";
+const basePath = import.meta.env.BASE_URL;
 
 interface Props {
     title: string;
 }
 
 const { title } = Astro.props;
-const pathname = Astro.url.pathname;
-
-const steps = [
-    { path: "/", label: "Inicio", number: 1 },
-    { path: "/about", label: "Nosotros", number: 2 },
-    { path: "/contact", label: "Contacto", number: 3 },
-];
-
-const getCurrentStepIndex = (path: string) => {
-    if (path === "/") return 0;
-    if (path.startsWith("/about")) return 1;
-    if (path.startsWith("/contact")) return 2;
-    return 0;
-};
 ---
 
 <!doctype html>
@@ -28,7 +15,7 @@ const getCurrentStepIndex = (path: string) => {
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/png" href="/logo.png" />
+        <link rel="icon" type="image/png" href={`${basePath}/logo.png`} />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <ClientRouter />
@@ -41,9 +28,9 @@ const getCurrentStepIndex = (path: string) => {
     </head>
     <body>
         <nav>
-            <a href="/" class="logo-container">
+            <a href={`/${basePath}`} class="logo-container">
                 <img
-                    src="/logo.jpg"
+                    src={`${basePath}/logo.jpg`}
                     alt="Empowering con IA Logo"
                     class="nav-logo"
                 />

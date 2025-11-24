@@ -1,30 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const basePath = import.meta.env.BASE_URL;
 
 const slides = [
 	{
 		title: "Google Colab",
 		subtitle: "Entorno de trabajo gratuito",
-		image: "/colab.png",
-		link: "/colab",
+		image: `${basePath}/colab.png`,
+		link: `${basePath}/colab`,
 	},
 	{
 		title: "OpenAI Api",
 		subtitle: "Configurando el api de open ai",
-		image: "/open-ai.png",
-		link: "/open-ai",
+		image: `${basePath}/open-ai.png`,
+		link: `${basePath}/open-ai`,
 	},
 	{
 		title: "Documentación",
 		subtitle: "Documentación del workshop",
-		image: "/documentation.png",
-		link: "/documentation",
+		image: `${basePath}/documentation.png`,
+		link: `${basePath}/documentation`,
 	},
 	{
 		title: "Base teórica",
 		subtitle: "Cuando usar un RAG",
-		image: "/complementary-info.png",
-		link: "/complementary-info",
+		image: `${basePath}/complementary-info.png`,
+		link: `${basePath}/complementary-info`,
 	},
 ];
 ---
@@ -197,8 +198,7 @@ const slides = [
 		}
 
 		.main-title h1 {
-			font-family:
-				"Outfit", sans-serif; /* Or a serif font like the reference */
+			font-family: "Outfit", sans-serif; /* Or a serif font like the reference */
 			font-size: 3rem;
 			margin: 0;
 			color: var(--accent-blue);
