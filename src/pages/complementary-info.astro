@@ -1,0 +1,862 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="RAG vs Fine-Tuning vs Few-Shot">
+    <div class="main-wrapper">
+        <div class="background-glow"></div>
+
+        <div class="container">
+            <header class="header animate-fade-in">
+                <h1 class="title">
+                    Guía Rápida: <br />
+                    <span class="text-gradient"
+                        >RAG vs Fine-Tuning vs Few-Shot</span
+                    >
+                </h1>
+                <p class="subtitle">
+                    Entiende las diferencias clave entre estas tres técnicas
+                    para mejorar el rendimiento de tus modelos de IA de forma
+                    práctica y sencilla.
+                </p>
+
+                <div class="actions">
+                    <a class="button-primary" href="#comparison">
+                        Ver Comparación
+                    </a>
+                </div>
+            </header>
+
+            <section class="grid">
+                <div
+                    class="card intro-card animate-slide-up"
+                    style="--delay: 100ms"
+                >
+                    <div class="card-icon"></div>
+                    <h3>¿Por Qué Elegir Una U Otra?</h3>
+                    <p>
+                        Cada técnica resuelve problemas diferentes. RAG para
+                        información actualizada, Fine-Tuning para comportamiento
+                        especializado, y Few-Shot para ajustes rápidos.
+                    </p>
+                    <div class="features-list">
+                        <span class="feature-tag">RAG → Datos Actuales</span>
+                        <span class="feature-tag"
+                            >Fine-Tuning → Comportamiento</span
+                        >
+                        <span class="feature-tag">Few-Shot → Rápido</span>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 200ms">
+                    <div class="card-header">
+                        <h3>RAG (Retrieval-Augmented Generation)</h3>
+                    </div>
+                    <div class="concept-explanation">
+                        <p>
+                            <strong>En simple:</strong> Como darle un libro de referencia
+                            al modelo para que consulte mientras responde.
+                        </p>
+
+                        <div class="analogy">
+                            <strong>Analogía:</strong> Un estudiante que tiene permitido
+                            usar sus apuntes durante el examen.
+                        </div>
+
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment"
+                                    ># Flujo básico de RAG</span
+                                ><br />
+                                1. Usuario hace una pregunta<br />
+                                2. Sistema busca en base de datos<br />
+                                3. Encuentra información relevante<br />
+                                4. Modelo responde usando esa info<br />
+                                5. <span class="code-string"
+                                    >→ Respuesta actualizada y precisa</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 300ms">
+                    <div class="card-header">
+                        <h3>Fine-Tuning</h3>
+                    </div>
+                    <div class="concept-explanation">
+                        <p>
+                            <strong>En simple:</strong> Re-entrenar el modelo para
+                            que se especialice en una tarea específica.
+                        </p>
+
+                        <div class="analogy">
+                            <strong>Analogía:</strong> Entrenar a un chef general
+                            para que se convierta en experto en sushi.
+                        </div>
+
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment"
+                                    ># Proceso de Fine-Tuning</span
+                                ><br />
+                                Modelo base + Datos especializados<br />
+                                ↓<br />
+                                Entrenamiento adicional<br />
+                                ↓<br />
+                                <span class="code-string"
+                                    >Modelo especializado</span
+                                ><br /><br />
+
+                                <span class="code-comment"
+                                    ># Ejemplo: Entrenar para</span
+                                ><br />
+                                - Jerga legal médica<br />
+                                - Tono de marca específico<br />
+                                - Formato de respuestas único
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 400ms">
+                    <div class="card-header">
+                        <h3>Few-Shot Learning</h3>
+                    </div>
+                    <div class="concept-explanation">
+                        <p>
+                            <strong>En simple:</strong> Darle algunos ejemplos al
+                            modelo en el prompt para que aprenda el patrón.
+                        </p>
+
+                        <div class="analogy">
+                            <strong>Analogía:</strong> Mostrarle a alguien 3 fotos
+                            de gatos para que aprenda a reconocer gatos.
+                        </div>
+
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="code-content">
+                                <span class="code-comment"
+                                    ># Ejemplo de Few-Shot</span
+                                ><br />
+                                <span class="code-string"
+                                    >"Traduce al español:"</span
+                                ><br />
+                                Hello → Hola<br />
+                                Goodbye → Adiós<br />
+                                Thank you → Gracias<br />
+                                How are you? → <span class="code-comment"
+                                    ># El modelo completa</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 500ms">
+                    <h3>Velocidad vs Efectividad</h3>
+                    <div class="comparison-bars">
+                        <div class="bar-item">
+                            <span>Few-Shot</span>
+                            <div class="bar-container">
+                                <div class="bar speed" style="width: 95%"></div>
+                                <div
+                                    class="bar effectiveness"
+                                    style="width: 60%"
+                                >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bar-item">
+                            <span>RAG</span>
+                            <div class="bar-container">
+                                <div class="bar speed" style="width: 70%"></div>
+                                <div
+                                    class="bar effectiveness"
+                                    style="width: 85%"
+                                >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bar-item">
+                            <span>Fine-Tuning</span>
+                            <div class="bar-container">
+                                <div class="bar speed" style="width: 30%"></div>
+                                <div
+                                    class="bar effectiveness"
+                                    style="width: 95%"
+                                >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar-legend">
+                        <div class="legend-item">
+                            <div class="legend-color speed"></div>
+                            <span>Velocidad de implementación</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color effectiveness"></div>
+                            <span>Efectividad en tarea específica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 600ms">
+                    <div class="card-header">
+                        <h3>Casos de Uso Prácticos</h3>
+                    </div>
+                    <div class="use-cases">
+                        <div class="use-case-item">
+                            <strong>RAG</strong>
+                            <span
+                                >Chatbot que responde sobre documentos
+                                actualizados</span
+                            >
+                        </div>
+                        <div class="use-case-item">
+                            <strong>Fine-Tuning</strong>
+                            <span
+                                >Asistente médico con terminología especializada</span
+                            >
+                        </div>
+                        <div class="use-case-item">
+                            <strong>Few-Shot</strong>
+                            <span
+                                >Clasificar emails rápidamente con ejemplos</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    id="comparison"
+                    class="card full-width animate-slide-up"
+                    style="--delay: 700ms"
+                >
+                    <h3>Comparación Directa</h3>
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <div class="table-cell">Característica</div>
+                            <div class="table-cell">Few-Shot</div>
+                            <div class="table-cell">RAG</div>
+                            <div class="table-cell">Fine-Tuning</div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="table-cell">Tiempo setup</div>
+                            <div class="table-cell highlight-green">
+                                Minutos
+                            </div>
+                            <div class="table-cell highlight-yellow">Horas</div>
+                            <div class="table-cell highlight-red">
+                                Días/Semanas
+                            </div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="table-cell">Costo</div>
+                            <div class="table-cell highlight-green">
+                                Muy bajo
+                            </div>
+                            <div class="table-cell highlight-yellow">
+                                Moderado
+                            </div>
+                            <div class="table-cell highlight-red">Alto</div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="table-cell">Flexibilidad</div>
+                            <div class="table-cell highlight-green">Alta</div>
+                            <div class="table-cell highlight-green">Alta</div>
+                            <div class="table-cell highlight-red">Baja</div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="table-cell">Precisión</div>
+                            <div class="table-cell highlight-yellow">
+                                Moderada
+                            </div>
+                            <div class="table-cell highlight-green">Alta</div>
+                            <div class="table-cell highlight-green">
+                                Muy alta
+                            </div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="table-cell">Datos necesarios</div>
+                            <div class="table-cell highlight-green">
+                                3-10 ejemplos
+                            </div>
+                            <div class="table-cell highlight-yellow">
+                                Base de datos
+                            </div>
+                            <div class="table-cell highlight-red">
+                                Miles de ejemplos
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 800ms">
+                    <h3>¿Cuándo Usar Cada Una?</h3>
+                    <div class="decision-flow">
+                        <div class="flow-step">
+                            <div class="flow-question">
+                                ¿Necesitas información actualizada
+                                frecuentemente?
+                            </div>
+                            <div class="flow-answer">
+                                <span class="answer-yes">Sí →</span>
+                                <strong class="technique">RAG</strong>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="flow-question">
+                                ¿Es un problema muy específico que requiere
+                                comportamiento único?
+                            </div>
+                            <div class="flow-answer">
+                                <span class="answer-yes">Sí →</span>
+                                <strong class="technique">Fine-Tuning</strong>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="flow-question">
+                                ¿Necesitas una solución rápida para probar una
+                                idea?
+                            </div>
+                            <div class="flow-answer">
+                                <span class="answer-yes">Sí →</span>
+                                <strong class="technique">Few-Shot</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card animate-slide-up" style="--delay: 900ms">
+                    <h3>Ejemplo Rápido: Few-Shot</h3>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
+                            <span class="code-comment"
+                                ># Clasificar sentimientos con ejemplos</span
+                            ><br />
+                            <span class="code-string"
+                                >"Clasifica el sentimiento:"</span
+                            ><br />
+                            "Me encanta este producto" → POSITIVO<br />
+                            "Odio cuando esto pasa" → NEGATIVO<br />
+                            "El servicio fue regular" → NEUTRAL<br />
+                            "No está mal para el precio" → <span
+                                class="code-comment"># El modelo completa</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    :root {
+        --bg-dark: #09090b;
+        --bg-card: #18181b;
+        --bg-card-hover: #27272a;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --text-main: #f4f4f5;
+        --text-muted: #a1a1aa;
+        --gradient-title: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
+        --accent-purple: #8b5cf6;
+        --accent-cyan: #06b6d4;
+    }
+
+    .main-wrapper {
+        background-color: var(--bg-dark);
+        min-height: 100vh;
+        color: var(--text-main);
+        font-family: "Inter", system-ui, sans-serif;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .background-glow {
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60vw;
+        height: 60vh;
+        background: radial-gradient(
+            circle,
+            rgba(139, 92, 246, 0.15) 0%,
+            transparent 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Header Styles */
+    .header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        font-weight: 800;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+    }
+
+    .text-gradient {
+        background: var(--gradient-title);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+        color: var(--text-muted);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 32px auto;
+    }
+
+    .button-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--text-main);
+        color: var(--bg-dark);
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.2s;
+    }
+
+    .button-primary:hover {
+        transform: scale(1.05);
+    }
+
+    /* Grid and Cards */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        border-color: var(--accent-purple);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .card.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .intro-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .feature-tag {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        color: var(--text-muted);
+    }
+
+    /* Concept Explanation */
+    .concept-explanation {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .analogy {
+        background: rgba(139, 92, 246, 0.1);
+        padding: 12px;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-purple);
+        font-size: 0.9rem;
+        color: var(--text-muted);
+    }
+
+    /* Comparison Bars */
+    .comparison-bars {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .bar-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .bar-item span {
+        min-width: 80px;
+        font-size: 0.9rem;
+        color: var(--text-main);
+    }
+
+    .bar-container {
+        flex: 1;
+        display: flex;
+        gap: 4px;
+        height: 20px;
+    }
+
+    .bar {
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+
+    .bar.speed {
+        background: linear-gradient(90deg, #10b981, #34d399);
+    }
+
+    .bar.effectiveness {
+        background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    }
+
+    .bar-legend {
+        display: flex;
+        gap: 16px;
+        margin-top: 12px;
+        justify-content: center;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+
+    .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+    }
+
+    .legend-color.speed {
+        background: var(--accent-green);
+    }
+
+    .legend-color.effectiveness {
+        background: var(--accent-blue);
+    }
+
+    /* Use Cases */
+    .use-cases {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .use-case-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .use-case-item:last-child {
+        border-bottom: none;
+    }
+
+    .use-case-item strong {
+        color: var(--accent-cyan);
+        font-size: 0.9rem;
+    }
+
+    .use-case-item span {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .table-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background: rgba(255, 255, 255, 0.05);
+        font-weight: 600;
+    }
+
+    .table-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .table-cell {
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+    .highlight-green {
+        background: rgba(34, 197, 94, 0.1);
+        color: var(--accent-green);
+    }
+
+    .highlight-yellow {
+        background: rgba(234, 179, 8, 0.1);
+        color: var(--accent-orange);
+    }
+
+    .highlight-red {
+        background: rgba(239, 68, 68, 0.1);
+        color: #f87171;
+    }
+
+    /* Decision Flow */
+    .decision-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .flow-step {
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-cyan);
+    }
+
+    .flow-question {
+        color: var(--text-main);
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    .flow-answer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
+
+    .answer-yes {
+        color: var(--accent-green);
+        font-weight: 600;
+    }
+
+    .technique {
+        color: var(--accent-purple);
+        font-weight: 700;
+    }
+
+    /* Terminal Window Styling */
+    .terminal-window {
+        background: #0f1115;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+        margin-top: auto;
+    }
+
+    .terminal-header {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    .dot.red {
+        background: #ef4444;
+    }
+    .dot.yellow {
+        background: var(--accent-orange);
+    }
+    .dot.green {
+        background: var(--accent-green);
+    }
+
+    .code-content {
+        padding: 16px;
+        font-family: "Fira Code", "Menlo", monospace;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        overflow-x: auto;
+        color: #e2e8f0;
+    }
+
+    /* Syntax Highlighting */
+    .code-comment {
+        color: var(--text-muted);
+        font-style: italic;
+    }
+    .code-string {
+        color: var(--accent-green);
+    }
+
+    /* Footer Grid */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .warning-box,
+    .tip-box {
+        padding: 20px;
+        border-radius: 12px;
+        display: flex;
+        gap: 16px;
+        font-size: 0.95rem;
+    }
+
+    .warning-box {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        color: #fca5a5;
+    }
+
+    .tip-box {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        color: #93c5fd;
+    }
+
+    .warning-box ul,
+    .tip-box ul {
+        margin: 8px 0 0 20px;
+        padding: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .animate-slide-up {
+        opacity: 0;
+        animation: slideUp 0.6s ease-out forwards;
+        animation-delay: var(--delay, 0ms);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .title {
+            font-size: 2.5rem;
+        }
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+        .table-header,
+        .table-row {
+            grid-template-columns: 1fr;
+        }
+        .bar-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .bar-legend {
+            flex-direction: column;
+            gap: 8px;
+        }
+    }
+</style>
