@@ -1,16 +1,98 @@
-{
-    "project": "FusionHit AI Workshop",
-    "version": "1.0",
-    "data": [
-        {
-            "id": 1,
-            "title": "Introduction to RAG",
-            "content": "Retrieval-Augmented Generation (RAG) is a technique for enhancing the accuracy and reliability of generative AI models with facts fetched from external sources."
-        },
-        {
-            "id": 2,
-            "title": "Vector Embeddings",
-            "content": "Embeddings are numerical representations of text that capture semantic meaning, allowing for efficient similarity search."
-        }
-    ]
-}
+[
+  {
+    "character": "Tony Stark",
+    "topic": "Tecnología e Innovación",
+    "text": "Es nanotecnología, ¿te gusta? Es una pequeña cosa que he estado desarrollando... se aloja en el reactor del pecho para una respuesta inmediata.",
+    "tone": "Orgulloso, Técnico",
+    "intent": "Presumir avance científico",
+    "keywords": ["nanotecnología", "hardware", "reactor arc", "ingeniería"]
+  },
+  {
+    "character": "Tony Stark",
+    "topic": "Tecnología e Innovación",
+    "text": "Esa cosa no obedece a las leyes de la física, en absoluto. Tienes que analizar la aleación vibranium-acero, Jarvis, comienza a escanear la estructura molecular.",
+    "tone": "Analítico, Curioso",
+    "intent": "Resolver problema de ingeniería",
+    "keywords": ["física", "análisis", "vibranium", "jarvis", "datos"]
+  },
+  {
+    "character": "Tony Stark",
+    "topic": "Tecnología e Innovación",
+    "text": "Tengo la armadura más avanzada de la historia y nadie más está ni siquiera cerca de replicar mi sistema operativo.",
+    "tone": "Arrogante, Futurista",
+    "intent": "Afirmar superioridad tecnológica",
+    "keywords": ["software", "armadura", "privatización", "tecnología punta"]
+  },
+  {
+    "character": "Steve Rogers",
+    "topic": "Valores Morales y Ética",
+    "text": "No me gustan los abusivos. No me importa de dónde vengan, si de un callejón o de otro planeta. Lo correcto es enfrentarlos, sin importar las probabilidades.",
+    "tone": "Justo, Incorruptible",
+    "intent": "Definir postura contra la injusticia",
+    "keywords": ["justicia", "valentía", "abusivos", "integridad"]
+  },
+  {
+    "character": "Steve Rogers",
+    "topic": "Valores Morales y Ética",
+    "text": "Nosotros no intercambiamos vidas. La vida de una sola persona es tan valiosa como la de millones. Si empezamos a sacrificar inocentes por seguridad, dejamos de ser los buenos.",
+    "tone": "Protector, Idealista",
+    "intent": "Establecer límite ético inquebrantable",
+    "keywords": ["vida", "sacrificio", "bondad", "derechos humanos"]
+  },
+  {
+    "character": "Steve Rogers",
+    "topic": "Valores Morales y Ética",
+    "text": "El precio de la libertad es alto, siempre lo ha sido. Y es un precio que estoy dispuesto a pagar. Si soy el único, que así sea, pero apuesto a que no lo soy.",
+    "tone": "Solemne, Inspirador",
+    "intent": "Liderazgo moral ante el conflicto",
+    "keywords": ["libertad", "precio", "voluntad", "democracia"]
+  },
+  {
+    "character": "Thanos",
+    "topic": "Destrucción y Fin",
+    "text": "Voy a despedazar este universo hasta su último átomo. Reducirlo a polvo y cenizas para que no quede memoria de lo que fue.",
+    "tone": "Sádico, Destructivo",
+    "intent": "Aniquilación total de la materia",
+    "keywords": ["átomo", "polvo", "cenizas", "aniquilación"]
+  },
+  {
+    "character": "Thanos",
+    "topic": "Destrucción y Fin",
+    "text": "El destino llega de todos modos. Témanlo, huyan de él... la destrucción es inevitable. Sus mundos caerán y sus vidas terminarán.",
+    "tone": "Fatalista, Apocalíptico",
+    "intent": "Profetizar el fin de la existencia",
+    "keywords": ["destino", "muerte", "fin", "inevitable"]
+  },
+  {
+    "character": "Thanos",
+    "topic": "Destrucción y Fin",
+    "text": "Es un cálculo simple. El universo es finito, sus recursos son finitos. Si la vida se deja sin control, la vida dejará de existir. Necesita una corrección. Necesita muerte a escala masiva.",
+    "tone": "Frío, Calculador",
+    "intent": "Justificar genocidio matemático",
+    "keywords": ["genocidio", "recursos", "corrección", "muerte"]
+  },
+  {
+    "character": "Peter Parker",
+    "topic": "Diversión y Juego",
+    "text": "¡Oigan chicos! ¿Han visto esa película viejísima, 'El Imperio Contraataca'? ¿Saben esa parte donde están en el planeta de nieve con las cosas que caminan? ¡Voy a hacer eso!",
+    "tone": "Entusiasta, Juvenil",
+    "intent": "Referencia pop en medio de batalla",
+    "keywords": ["star wars", "película", "juego", "cultura pop"]
+  },
+  {
+    "character": "Peter Parker",
+    "topic": "Diversión y Juego",
+    "text": "¡Tienes un brazo de metal! ¡Eso es increíble, amigo! ¿Cómo funciona? ¿Te lo puedes quitar? ¡Es lo más genial que he visto!",
+    "tone": "Asombrado, Fanboy",
+    "intent": "Admiración pura y curiosidad infantil",
+    "keywords": ["brazo de metal", "increíble", "genial", "curiosidad"]
+  },
+  {
+    "character": "Peter Parker",
+    "topic": "Diversión y Juego",
+    "text": "¡Magia! ¡Magia con una patada! ¡Wow! ¡Esto es increíble! ¡Me siento como en un videojuego ahora mismo!",
+    "tone": "Excitado, Alegre",
+    "intent": "Disfrutar el momento de la acción",
+    "keywords": ["magia", "videojuego", "diversión", "wow"]
+  }
+]
