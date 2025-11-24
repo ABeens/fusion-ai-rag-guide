@@ -1,43 +1,34 @@
-# Astro Starter Kit: Minimal
+# FusionHit AI Workshop Guide
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Este repositorio contiene la guia y documentacion para el workshop de FusionHit sobre Inteligencia Artificial, especificamente enfocado en RAG (Retrieval-Augmented Generation), Fine-Tuning y Few-Shot Learning.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Descripcion
 
-## 🚀 Project Structure
+El proyecto es una aplicacion web construida con Astro que sirve como material de apoyo y guia interactiva para entender las diferencias, casos de uso e implementacion de diversas tecnicas de mejora para modelos de lenguaje (LLMs).
 
-Inside of your Astro project, you'll see the following folders and files:
+## Contenido
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+El repositorio incluye:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Guia comparativa entre RAG, Fine-Tuning y Few-Shot.
+- Documentacion tecnica sobre las herramientas utilizadas (Python, Pandas, ChromaDB, OpenAI, etc.).
+- Recursos descargables como datasets de ejemplo.
+- Instrucciones de configuracion para entornos como Google Colab.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Tecnologias
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Astro (Framework web)
+- CSS (Estilos personalizados)
+- Python (Para los ejemplos de backend y procesamiento de datos)
 
-## 🧞 Commands
+## Instalacion y Uso
 
-All commands are run from the root of the project, from a terminal:
+Para ejecutar este proyecto localmente:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Instalar dependencias:
+   npm install
 
-## 👀 Want to learn more?
+2. Iniciar el servidor de desarrollo:
+   npm run dev
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+El sitio estara disponible en localhost:4321.
