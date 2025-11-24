@@ -1,0 +1,649 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Documentación - RAG Workshop">
+	<div class="documentation-container">
+		<div class="doc-header">
+			<h1>Documentación del Workshop</h1>
+			<p class="subtitle">Tecnologías y Recursos para el Sistema RAG</p>
+		</div>
+
+		<!-- Dataset Section -->
+		<section class="doc-section">
+			<h2>Dataset: Citas de Marvel</h2>
+			<div class="content-box">
+				<p>
+					El archivo <code>data.json</code> contiene citas estructuradas
+					de personajes de Marvel con metadatos semánticos. Este dataset
+					será la base para nuestro sistema RAG.
+				</p>
+
+				<div class="json-structure">
+					<h3>Estructura de los datos:</h3>
+					<pre><code>{`{
+  "character": "Tony Stark",
+  "topic": "Tecnología e Innovación",
+  "text": "Es nanotecnología, ¿te gusta?...",
+  "tone": "Orgulloso, Técnico",
+  "intent": "Presumir avance científico",
+  "keywords": ["nanotecnología", "hardware", "reactor arc"]
+}`}</code></pre>
+				</div>
+
+				<div class="characters-grid">
+					<div class="character-card">
+						<h4>Tony Stark</h4>
+						<p>Tecnología e Innovación</p>
+					</div>
+					<div class="character-card">
+						<h4>Steve Rogers</h4>
+						<p>Valores Morales y Ética</p>
+					</div>
+					<div class="character-card">
+						<h4>Thanos</h4>
+						<p>Destrucción y Fin</p>
+					</div>
+					<div class="character-card">
+						<h4>Peter Parker</h4>
+						<p>Diversión y Juego</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Technologies Section -->
+		<section class="doc-section">
+			<h2>Tecnologías del Colab</h2>
+			<p class="section-intro">
+				Stack completo de librerías Python que utilizaremos en el
+				workshop para construir nuestro sistema RAG interactivo.
+			</p>
+
+			<div class="tech-grid">
+				<!-- Data Processing -->
+				<div class="tech-card">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>Pandas (pd)</h3>
+					</div>
+					<p class="tech-description">
+						Biblioteca fundamental para análisis y manipulación de
+						datos en Python.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>
+								Cargar archivo JSON en DataFrame con <code
+									>pd.read_json()</code>
+							</li>
+							<li>
+								Visualizar primeros datos con <code
+									>df.head()</code>
+							</li>
+							<li>Procesar información de las citas</li>
+							<li>Manipular y transformar datos estructurados</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="tech-card">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>NumPy (np)</h3>
+					</div>
+					<p class="tech-description">
+						Biblioteca para computación numérica, especialmente útil
+						para trabajar con arrays.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>
+								Obtener valores únicos con <code
+									>np.unique()</code>
+							</li>
+							<li>Manejar embeddings como arrays numéricos</li>
+							<li>Operaciones matemáticas eficientes</li>
+							<li>Procesamiento de vectores de alta dimensión</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- NLP & Embeddings -->
+				<div class="tech-card">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>sentence-transformers</h3>
+					</div>
+					<p class="tech-description">
+						Facilita la generación de embeddings de oraciones usando
+						modelos pre-entrenados.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>
+								Cargar modelo pre-entrenado con <code
+									>SentenceTransformer</code>
+							</li>
+							<li>
+								Convertir citas de Marvel en vectores numéricos
+							</li>
+							<li>Medir similitud semántica entre textos</li>
+							<li>Base para el sistema de búsqueda RAG</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="tech-card">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>transformers (AutoTokenizer)</h3>
+					</div>
+					<p class="tech-description">
+						Ecosistema Hugging Face para modelos pre-entrenados de
+						PLN.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>
+								Tokenizar texto con <code>AutoTokenizer</code>
+							</li>
+							<li>Dividir texto en unidades (tokens)</li>
+							<li>Preparar input para modelos de lenguaje</li>
+							<li>Procesamiento previo a embeddings</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Vector Database -->
+				<div class="tech-card highlight">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>ChromaDB</h3>
+					</div>
+					<p class="tech-description">
+						Base de datos vectorial para almacenar embeddings
+						eficientemente.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>Almacenar embeddings generados</li>
+							<li>
+								Guardar textos originales y metadatos
+								(personaje, topic)
+							</li>
+							<li>Realizar búsquedas de similitud rápidas</li>
+							<li>Core del sistema de recuperación RAG</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Machine Learning -->
+				<div class="tech-card">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>Scikit-learn (PCA)</h3>
+					</div>
+					<p class="tech-description">
+						Biblioteca de aprendizaje automático para reducción de
+						dimensionalidad.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>
+								Aplicar PCA (Análisis de Componentes
+								Principales)
+							</li>
+							<li>
+								Reducir embeddings de alta dimensión a 2D/3D
+							</li>
+							<li>Facilitar visualización de vectores</li>
+							<li>Análisis exploratorio de datos</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Visualization -->
+				<div class="tech-card">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>Matplotlib & Seaborn</h3>
+					</div>
+					<p class="tech-description">
+						Bibliotecas para crear gráficos estáticos en Python.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>Visualizar embeddings reducidos en 2D</li>
+							<li>
+								Observar agrupaciones de citas por personaje
+							</li>
+							<li>Crear gráficos estáticos de alta calidad</li>
+							<li>Análisis visual de clusters</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="tech-card">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>Plotly Express</h3>
+					</div>
+					<p class="tech-description">
+						Biblioteca para crear gráficos interactivos con
+						facilidad.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>Generar visualización 3D de embeddings</li>
+							<li>Interactividad: rotar, zoom, hover</li>
+							<li>Ver detalles de cada cita al pasar el ratón</li>
+							<li>Exploración inmersiva de datos vectoriales</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Interface & LLM -->
+				<div class="tech-card highlight">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>Gradio</h3>
+					</div>
+					<p class="tech-description">
+						Crear interfaces web para modelos de ML con muy poco
+						código.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>Construir aplicación interactiva RAG</li>
+							<li>Interfaz de usuario para consultas</li>
+							<li>
+								Input de texto y visualización de respuestas
+							</li>
+							<li>Demo rápido y funcional</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="tech-card highlight">
+					<div class="tech-header">
+						<span class="tech-icon"></span>
+						<h3>OpenAI Python Client</h3>
+					</div>
+					<p class="tech-description">
+						Biblioteca oficial para interactuar con la API de
+						OpenAI.
+					</p>
+					<div class="tech-usage">
+						<strong>Uso en el proyecto:</strong>
+						<ul>
+							<li>Comunicarse con modelos LLM de OpenAI</li>
+							<li>
+								Generar respuestas basadas en contexto
+								recuperado
+							</li>
+							<li>
+								Integración del componente de generación en RAG
+							</li>
+							<li>
+								Respuestas inteligentes con conocimiento
+								específico
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Resources -->
+		<section class="doc-section">
+			<h2>Recursos Adicionales</h2>
+			<div class="resources-grid">
+				<a href="/data.json" target="_blank" class="resource-link">
+					<span class="resource-icon"></span>
+					<div>
+						<strong>data.json</strong>
+						<p>Dataset completo de citas Marvel</p>
+					</div>
+				</a>
+				<a href="/colab" class="resource-link">
+					<span class="resource-icon"></span>
+					<div>
+						<strong>Google Colab</strong>
+						<p>Configuración del entorno de trabajo</p>
+					</div>
+				</a>
+				<a href="/open-ai" class="resource-link">
+					<span class="resource-icon"></span>
+					<div>
+						<strong>OpenAI API</strong>
+						<p>Setup de credenciales</p>
+					</div>
+				</a>
+				<a href="/complementary-info" class="resource-link">
+					<span class="resource-icon"></span>
+					<div>
+						<strong>Base Teórica</strong>
+						<p>Cuándo usar RAG</p>
+					</div>
+				</a>
+			</div>
+		</section>
+	</div>
+
+	<style>
+		.documentation-container {
+			max-width: 1400px;
+			margin: 0 auto;
+			padding: 2rem;
+			color: var(--text-color);
+		}
+
+		.doc-header {
+			text-align: center;
+			margin-bottom: 4rem;
+			padding: 2rem 0;
+		}
+
+		.doc-header h1 {
+			font-size: 3rem;
+			margin: 0;
+			background: var(--accent-gradient);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		.subtitle {
+			font-size: 1.2rem;
+			color: rgba(255, 255, 255, 0.7);
+			margin-top: 1rem;
+		}
+
+		.doc-section {
+			margin-bottom: 4rem;
+		}
+
+		.doc-section h2 {
+			font-size: 2rem;
+			margin-bottom: 1.5rem;
+			color: var(--accent-blue);
+		}
+
+		.section-intro {
+			font-size: 1.1rem;
+			color: rgba(255, 255, 255, 0.8);
+			margin-bottom: 2rem;
+			line-height: 1.6;
+		}
+
+		.content-box {
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 20px;
+			padding: 2rem;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.content-box p {
+			line-height: 1.8;
+			color: rgba(255, 255, 255, 0.8);
+		}
+
+		code {
+			background: rgba(59, 130, 246, 0.2);
+			padding: 0.2rem 0.5rem;
+			border-radius: 4px;
+			font-family: "Courier New", monospace;
+			color: var(--accent-blue);
+		}
+
+		.json-structure {
+			margin-top: 2rem;
+		}
+
+		.json-structure h3 {
+			color: var(--accent-orange);
+			margin-bottom: 1rem;
+		}
+
+		.json-structure pre {
+			background: rgba(0, 0, 0, 0.5);
+			padding: 1.5rem;
+			border-radius: 10px;
+			overflow-x: auto;
+			border: 1px solid rgba(249, 115, 22, 0.3);
+		}
+
+		.json-structure code {
+			background: none;
+			padding: 0;
+			color: rgba(255, 255, 255, 0.9);
+			font-size: 0.9rem;
+			line-height: 1.6;
+		}
+
+		.characters-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1rem;
+			margin-top: 2rem;
+		}
+
+		.character-card {
+			background: rgba(59, 130, 246, 0.1);
+			padding: 1.5rem;
+			border-radius: 10px;
+			border: 1px solid rgba(59, 130, 246, 0.3);
+			text-align: center;
+		}
+
+		.character-card h4 {
+			margin: 0;
+			color: var(--accent-blue);
+			font-size: 1.2rem;
+		}
+
+		.character-card p {
+			margin: 0.5rem 0 0;
+			color: rgba(255, 255, 255, 0.7);
+			font-size: 0.9rem;
+		}
+
+		.tech-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+			gap: 2rem;
+		}
+
+		.tech-card {
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 15px;
+			padding: 2rem;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			transition: all 0.3s ease;
+		}
+
+		.tech-card:hover {
+			transform: translateY(-5px);
+			border-color: var(--accent-blue);
+			box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+		}
+
+		.tech-card.highlight {
+			background: rgba(249, 115, 22, 0.05);
+		}
+
+		.tech-card.highlight:hover {
+			border-color: var(--accent-orange);
+			box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+		}
+
+		.tech-header {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.tech-icon {
+			font-size: 2rem;
+		}
+
+		.tech-header h3 {
+			margin: 0;
+			color: var(--accent-blue);
+			font-size: 1.3rem;
+		}
+
+		.tech-card.highlight .tech-header h3 {
+			color: var(--accent-orange);
+		}
+
+		.tech-description {
+			color: rgba(255, 255, 255, 0.8);
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.tech-usage {
+			margin-top: 1rem;
+		}
+
+		.tech-usage strong {
+			color: var(--accent-green);
+			display: block;
+			margin-bottom: 0.5rem;
+		}
+
+		.tech-usage ul {
+			margin: 0.5rem 0 0 0;
+			padding-left: 1.5rem;
+		}
+
+		.tech-usage li {
+			color: rgba(255, 255, 255, 0.7);
+			margin-bottom: 0.5rem;
+			line-height: 1.5;
+		}
+
+		.flow-diagram {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 1rem;
+		}
+
+		.flow-step {
+			flex: 1;
+			min-width: 150px;
+			background: rgba(59, 130, 246, 0.1);
+			padding: 1.5rem;
+			border-radius: 10px;
+			border: 2px solid var(--accent-blue);
+			text-align: center;
+		}
+
+		.step-number {
+			width: 40px;
+			height: 40px;
+			background: var(--accent-blue);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 1rem;
+			font-weight: bold;
+			font-size: 1.2rem;
+		}
+
+		.flow-step h4 {
+			margin: 0.5rem 0;
+			color: var(--accent-blue);
+		}
+
+		.flow-step p {
+			margin: 0;
+			font-size: 0.9rem;
+			color: rgba(255, 255, 255, 0.7);
+		}
+
+		.flow-arrow {
+			font-size: 2rem;
+			color: var(--accent-blue);
+			flex-shrink: 0;
+		}
+
+		.resources-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 1.5rem;
+		}
+
+		.resource-link {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			background: rgba(255, 255, 255, 0.05);
+			padding: 1.5rem;
+			border-radius: 10px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			text-decoration: none;
+			color: var(--text-color);
+			transition: all 0.3s ease;
+		}
+
+		.resource-link:hover {
+			transform: translateY(-3px);
+			border-color: var(--accent-green);
+			box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+		}
+
+		.resource-icon {
+			font-size: 2.5rem;
+		}
+
+		.resource-link strong {
+			display: block;
+			color: var(--accent-green);
+			margin-bottom: 0.3rem;
+		}
+
+		.resource-link p {
+			margin: 0;
+			font-size: 0.9rem;
+			color: rgba(255, 255, 255, 0.7);
+		}
+
+		@media (max-width: 768px) {
+			.doc-header h1 {
+				font-size: 2rem;
+			}
+
+			.tech-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.flow-diagram {
+				flex-direction: column;
+			}
+
+			.flow-arrow {
+				transform: rotate(90deg);
+			}
+
+			.documentation-container {
+				padding: 1rem;
+			}
+		}
+	</style>
+</Layout>
